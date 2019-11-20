@@ -26,7 +26,7 @@ The logo image should contain a black background. Here is an example of the McDo
 ```
 
 ---
-
+The following code can be used to visualize the results 
 ```python
     ground_show = image.copy()
     plt.rcParams['figure.figsize'] = 18,10
@@ -35,5 +35,13 @@ The logo image should contain a black background. Here is an example of the McDo
     plt.title('Result', fontsize=15)
     plt.axis('off');
 ```
+### Results
+Original image:
+[![original-image.jpg](https://i.postimg.cc/xdWvpwxV/original-image.jpg)](https://postimg.cc/WDwqhHc5)
+Image with logo:
+[![result-image.jpg](https://i.postimg.cc/tJRYBDjH/result-image.jpg)](https://postimg.cc/N9VsM6FN)
+[![result-image2.jpg](https://i.postimg.cc/4N7JsjwS/result-image2.jpg)](https://postimg.cc/BX3WCYrT)
+[![result-image3.jpg](https://i.postimg.cc/nLHbjWYZ/result-image3.jpg)](https://postimg.cc/qNZZWj5Z)
+
 ### Reference
 Part of the code for the logo rotate in 3D is taken from [here](https://github.com/eborboihuc/rotate_3d)
