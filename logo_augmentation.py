@@ -7,12 +7,14 @@ from image_transformer import ImageTransformer
 
 class HardAugmentation(object):
     
-    def __init__(self, prob_color, prob_scale, prob_rotate, prob_rotate3d, prob_crop):
+    def __init__(self, logo_path, prob_color, prob_scale, prob_rotate, prob_rotate3d, prob_crop):
+        self.logo_path = logo_path
         self.prob_color = prob_color
         self.prob_scale = prob_scale
         self.prob_rotate = prob_rotate
         self.prob_rotate3d = prob_rotate3d
         self.prob_crop = prob_crop
+        self.it = ImageTransformer(self.logo_path, None)
     
     def __call__(self, ground, logo, two_step=False):
         rows_ground, cols_ground = ground.shape[:2]
@@ -34,7 +36,7 @@ class HardAugmentation(object):
             theta = random.randint(-70,70)
             phi = random.randint(-70,70)
             print('rotate3d - theta = {}, phi = {}'.format(theta, phi))
-            logo = it.rotate_along_axis(theta=theta, phi=phi, dx = 5)
+            logo = self.it.rotate_along_axis(theta=theta, phi=phi, dx = 5)
             rows, cols, channels = logo.shape
 
         if (max(logo.shape)) < ((ground.shape[1])/2):
@@ -75,17 +77,17 @@ class HardAugmentation(object):
         ground_bg = cv2.bitwise_and(roi, roi, mask=mask_inv)
         logo_fg = cv2.bitwise_and(logo, logo, mask=mask)
         dst = cv2.add(ground_bg, logo_fg)
-        _ = logo_fg.copy()
+        lll = logo_fg.copy()
         # RANDOM COLOR
         if random.random() < self.prob_color:
             print('Random color')
             # set random color for each chanel
-            _2 = (np.where(mask==255, np.random.randint(200,255, dtype='uint8'), 0))
-            _1 = (np.where(mask==255, np.random.randint(200,255, dtype='uint8'), 0))
-            _0 = (np.where(mask==255, np.random.randint(0,80, dtype='uint8'), 0))
-            _[:,:,0] = _0
-            _[:,:,1] = _1
-            _[:,:,2] =_2
+            l2 = (np.where(mask==255, np.random.randint(200,255, dtype='uint8'), 0))
+            l1 = (np.where(mask==255, np.random.randint(200,255, dtype='uint8'), 0))
+            l0 = (np.where(mask==255, np.random.randint(0,80, dtype='uint8'), 0))
+            lll[:,:,0] = l0
+            lll[:,:,1] = l1
+            lll[:,:,2] = l2
             dst = cv2.add(ground_bg, lll)
         ground[start_y:(start_y+rows), start_x:(start_x+cols)] = dst
         target = (start_x,start_y,start_x+rows, start_y+cols)
