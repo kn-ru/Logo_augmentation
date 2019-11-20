@@ -4,6 +4,10 @@ A class is presented that allows you to do hard augmentation for any logos (bran
 * Python 3.5+
 * opencv, imutils, numpy, random, math, pillow
 ### Usage
+The logo image should contain a black background. Here is an example of the McDonalds logo
+![McDonalds logo](/media/trinity/Enface21/LOGODATASET/humantest/rotate_3d-master/output/000.jpg "McDonalds")
+
+
 ```python
     # Import class
     from logo_augmentation import HardAugmentation
@@ -31,4 +35,5 @@ A class is presented that allows you to do hard augmentation for any logos (bran
     plt.title('Result', fontsize=15)
     plt.axis('off');
 ```
-
+### Reference
+Part of the code for the logo rotate in 3D is taken from [here](https://github.com/eborboihuc/rotate_3d)
