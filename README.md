@@ -17,6 +17,18 @@ A class is presented that allows you to do hard augmentation for any logos (bran
     #Сreate class instance
     HA = HardAugmentation(logo_path, prob_color = 0.0001, prob_scale = 0.6, prob_rotate = 0.99, 
                           prob_rotate3d = 0.999, prob_crop = 0.6)
-    
-    
+    #Result
+    image, target = HA(img.copy(), logo)
 ```
+
+---
+
+```python
+    ground_show = image.copy()
+    plt.rcParams['figure.figsize'] = 18,10
+    ground_show = cv2.rectangle(ground_show, (target[0], target[1]), (target[2], target[3]) , (0,0,255), 5)
+    plt.imshow(cv2.cvtColor(ground_show, cv2.COLOR_BGR2RGB))
+    plt.title('Result', fontsize=15)
+    plt.axis('off');
+```
+
