@@ -5,7 +5,7 @@ A class is presented that allows you to do hard augmentation for any logos (bran
 * opencv, imutils, numpy, random, math, pillow
 ### Usage
 The logo image should contain a black background. Here is an example of the McDonalds logo
-![McDonalds logo](/media/trinity/Enface21/LOGODATASET/humantest/rotate_3d-master/output/000.jpg "McDonalds")
+![McDonalds logo](https://postimg.cc/yg402ZXZ)
 
 
 ```python
