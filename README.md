@@ -36,11 +36,11 @@ The following code can be used to visualize the results
     plt.axis('off');
 ```
 ### Parameters:
-prob_color - the probability that the color of the logo will be changed in accordance with a predetermined rule (set apart)
-prob_scale - the probability that the logo will be randomly resize
-prob_rotate - the probability that the logo will rotate on a random angle (roll)
-prob_rotate3d - the probability that the logo will rotate on a random angle from -70 to 70 degrees (pitch and yaw)
-prob_crop - the probability that the logo is accidentally cut off from the top side (for now) by 10%
+* prob_color - the probability that the color of the logo will be changed in accordance with a predetermined rule (set apart)
+* prob_scale - the probability that the logo will be randomly resize
+* prob_rotate - the probability that the logo will rotate on a random angle (roll)
+* prob_rotate3d - the probability that the logo will rotate on a random angle from -70 to 70 degrees (pitch and yaw)
+* prob_crop - the probability that the logo is accidentally cut off from the top side (for now) by 10%
 
 ### Results
 Original image:
