@@ -5,8 +5,7 @@ A class is presented that allows you to do hard augmentation for any logos (bran
 * opencv, imutils, numpy, random, math, pillow
 ### Usage
 The logo image should contain a black background. Here is an example of the McDonalds logo
-![McDonalds logo](https://postimg.cc/yg402ZXZ)
-
+[![000.jpg](https://i.postimg.cc/85swJd7t/000.jpg)](https://postimg.cc/yg402ZXZ)
 
 ```python
     # Import class
