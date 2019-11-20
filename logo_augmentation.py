@@ -6,7 +6,6 @@ import imutils
 from image_transformer import ImageTransformer
 
 class HardAugmentation(object):
-class HardAugmentation(object):
     
     def __init__(self, logo_path, prob_color, prob_scale, prob_rotate, prob_rotate3d, prob_crop):
         self.logo_path = logo_path
