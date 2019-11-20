@@ -6,6 +6,7 @@ import imutils
 from image_transformer import ImageTransformer
 
 class HardAugmentation(object):
+class HardAugmentation(object):
     
     def __init__(self, logo_path, prob_color, prob_scale, prob_rotate, prob_rotate3d, prob_crop):
         self.logo_path = logo_path
@@ -77,23 +78,23 @@ class HardAugmentation(object):
         ground_bg = cv2.bitwise_and(roi, roi, mask=mask_inv)
         logo_fg = cv2.bitwise_and(logo, logo, mask=mask)
         dst = cv2.add(ground_bg, logo_fg)
-        lll = logo_fg.copy()
+        _ = logo_fg.copy()
         # RANDOM COLOR
         if random.random() < self.prob_color:
             print('Random color')
             # set random color for each chanel
-            l2 = (np.where(mask==255, np.random.randint(200,255, dtype='uint8'), 0))
-            l1 = (np.where(mask==255, np.random.randint(200,255, dtype='uint8'), 0))
-            l0 = (np.where(mask==255, np.random.randint(0,80, dtype='uint8'), 0))
-            lll[:,:,0] = l0
-            lll[:,:,1] = l1
-            lll[:,:,2] = l2
-            dst = cv2.add(ground_bg, lll)
+            _2 = (np.where(mask==255, np.random.randint(200,255, dtype='uint8'), 0))
+            _1 = (np.where(mask==255, np.random.randint(200,255, dtype='uint8'), 0))
+            _0 = (np.where(mask==255, np.random.randint(0,80, dtype='uint8'), 0))
+            _[:,:,0] = l0
+            _[:,:,1] = l1
+            _[:,:,2] = l2
+            dst = cv2.add(ground_bg, _)
         ground[start_y:(start_y+rows), start_x:(start_x+cols)] = dst
         target = (start_x,start_y,start_x+rows, start_y+cols)
         if is_rotate:
             target = (start_x+min(np.where(mask==255)[1]),start_y+min(np.where(mask==255)[0]),start_x+max(np.where(mask==255)[1]), start_y+max(np.where(mask==255)[0]))
-        return ground, target, mask, logo, dst, lll
+        return ground, target, mask, logo, dst, _
     
     @staticmethod
     def rotate_image(mat, angle):
