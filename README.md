@@ -37,8 +37,11 @@ The following code can be used to visualize the results
 ```
 ### Results
 Original image:
+
 [![original-image.jpg](https://i.postimg.cc/xdWvpwxV/original-image.jpg)](https://postimg.cc/WDwqhHc5)
+
 Image with logo:
+
 [![result-image.jpg](https://i.postimg.cc/tJRYBDjH/result-image.jpg)](https://postimg.cc/N9VsM6FN)
 [![result-image2.jpg](https://i.postimg.cc/4N7JsjwS/result-image2.jpg)](https://postimg.cc/BX3WCYrT)
 [![result-image3.jpg](https://i.postimg.cc/nLHbjWYZ/result-image3.jpg)](https://postimg.cc/qNZZWj5Z)
