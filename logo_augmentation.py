@@ -85,9 +85,9 @@ class HardAugmentation(object):
             _2 = (np.where(mask==255, np.random.randint(200,255, dtype='uint8'), 0))
             _1 = (np.where(mask==255, np.random.randint(200,255, dtype='uint8'), 0))
             _0 = (np.where(mask==255, np.random.randint(0,80, dtype='uint8'), 0))
-            _[:,:,0] = l0
-            _[:,:,1] = l1
-            _[:,:,2] = l2
+            _[:,:,0] = _0
+            _[:,:,1] = _1
+            _[:,:,2] = _2
             dst = cv2.add(ground_bg, _)
         ground[start_y:(start_y+rows), start_x:(start_x+cols)] = dst
         target = (start_x,start_y,start_x+rows, start_y+cols)
