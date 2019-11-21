@@ -93,7 +93,7 @@ class HardAugmentation(object):
         target = (start_x,start_y,start_x+rows, start_y+cols)
         if is_rotate:
             target = (start_x+min(np.where(mask==255)[1]),start_y+min(np.where(mask==255)[0]),start_x+max(np.where(mask==255)[1]), start_y+max(np.where(mask==255)[0]))
-        return ground, target, mask, logo, dst, _
+        return ground, target
     
     @staticmethod
     def rotate_image(mat, angle):
